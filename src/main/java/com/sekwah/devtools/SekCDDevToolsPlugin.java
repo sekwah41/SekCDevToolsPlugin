@@ -1,5 +1,4 @@
 package com.sekwah.devtools;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.bukkit.Bukkit;
@@ -38,6 +37,12 @@ public final class SekCDDevToolsPlugin extends JavaPlugin {
         }, 0L, 1L);
 
         logger.info("SekC Dev Tools enabled");
+
+        // Say to all players that the server has reloaded
+        Bukkit.getOnlinePlayers().forEach(player -> {
+            // send green text
+            player.sendMessage("[DevTools] Server reloaded");
+        });
     }
 
     @Override
